@@ -6,6 +6,7 @@
 var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
+var update = require('./routes/update');
 var http = require('http');
 var path = require('path');
 var exphbs  = require('express3-handlebars');
@@ -22,6 +23,7 @@ app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
+app.use(express.bodyParser());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -31,7 +33,9 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.get('/users', user.list);
+app.post('/rainbow', update.rainbow);
+app.post('/sparkle', update.sparkle);
+app.post('/color', update.color);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
