@@ -5,7 +5,7 @@ onResponse = function (err, res) {
     return err;
   }
   else {
-    return response;
+    return res;
   }
 };
 
@@ -65,5 +65,7 @@ exports.color = function (red, green, blue) {
   agent
     .get(url)
     .end(onResponse);
-
+  agent
+    .get("http://arduino.local/arduino/normal/1")
+    .end(onResponse);
 };

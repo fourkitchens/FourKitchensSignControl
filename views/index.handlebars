@@ -1,24 +1,33 @@
-<h1>4K Sign Controls</h1>
 <form method="post" action="/rainbow">
-	<h2>Rainbow</h2>
-  <label for="delay">Delay:</label>
-  <input type="range" min="1" max="200" step="1" name="delay"></input>
-  <input type="submit" value="Rainbow" name="rainbowSubmit">
+  <fieldset>
+    <legend>Rainbow</legend>
+    <label for="delay">Delay:</label>
+    <input type="range" class="large-6 small-12" min="1" max="200" step="1" name="delay"></input>
+    <output for="delay" onforminput="value = "delay.valueAsNumber;"></output>
+    <br/>
+    <input type="submit" value="Rainbow" class="small button success" name="rainbowSubmit">
+  </fieldset>
 </form>
 
 <form method="post" action="/sparkle">
-  <h2>Sparkle</h2>
-  <label for="repeats">Repeats </label>
-  <input type="range" min="1" max="200" step="1" name="repeats"></input>
-  <label for="min">Min LEDs</label>
-  <input type="range" min="1" max="240" step="1" name="min"></input>
-  <label for="repeats">Max LEDs </label>
-  <input type="range" min="1" max="240" step="1" name="max"></input>
-  <input type="submit" value="Sparkle">
+  <fieldset>
+    <legend>Sparkle</legend>
+    <label for="repeats">Repeats </label>
+    <input type="range" class="large-6 small-12" min="1" max="200" step="1" name="repeats"></input>
+    <label for="min">Min LEDs</label>
+    <input type="range" class="large-6 small-12" min="1" max="240" step="1" name="min"></input>
+    <label for="repeats">Max LEDs </label>
+    <input type="range" class="large-6 small-12" min="1" max="240" step="1" name="max"></input>
+    <br/>
+    <input type="submit" class="small button success" value="Sparkle">
+  </fieldset>
 </form>
 
 <form method="post" action="/color">
-  <h2>Color</h2>
-  <input type="color" name="color"/>
-  <input type="submit" value="Set Color">
+  <fieldset>
+    <legend>Color</legend>
+    <input type="color" name="color"/>
+    <br/>
+    <input type="submit" class="small button success" value="Set Color">
+  </fieldset>
 </form>
